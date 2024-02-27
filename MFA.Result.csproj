@@ -4,6 +4,28 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>MFA.Result</PackageId>
+    <Version>8.0.0</Version>
+    <Product>MFA.Result</Product>
+    <Company>MFA</Company>
+    <Authors>MFA</Authors>
+    <Description>A versatile result handling library for .NET applications, providing a structured way to return data and error messages.</Description>
+    <Copyright>© 2024 Muhammet Furkan Ayhan. All rights reserved.</Copyright>
+    <RepositoryUrl>https://github.com/mfurkanayhan/MFA.Result</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/mfurkanayhan/MFA.Result</PackageProjectUrl>
+    <PackageIcon>.MFA.PNG</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update=".MFA.PNG">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

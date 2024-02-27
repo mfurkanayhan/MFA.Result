@@ -1,4 +1,4 @@
-# MFA.Result
+# MFA.Result NuGet Package
 
 ## Overview
 `MFA.Result` is a lightweight, versatile .NET library designed to simplify error handling and response management in your applications. It provides a robust way to encapsulate the results of operations, including success or failure information along with data and error messages. This library is ideal for APIs, web applications, and any .NET project that requires clear and concise result management.
@@ -75,5 +75,3 @@ else
 Contributions are welcome! If you have suggestions or want to improve `MFA.Result`, please feel free to fork the repository, make changes, and submit a pull request.
 ## License
 `MFA.Result` is available under the MIT license. See the LICENSE file for more info.
-## Contact
-For any questions or feedback, please contact Muhammet Furkan Ayhan at mfurkana067@gmail.com
