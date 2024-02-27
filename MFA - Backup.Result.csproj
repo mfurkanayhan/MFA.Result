@@ -7,8 +7,8 @@
     <PackageId>MFA.Result</PackageId>
     <Version>8.0.0</Version>
     <Product>MFA.Result</Product>
-    <Company>Muhammet Furkan Ayhan</Company>
-    <Authors>Muhammet Furkan Ayhan</Authors>
+    <Company>MFA</Company>
+    <Authors>MFA</Authors>
     <Description>A versatile result handling library for .NET applications, providing a structured way to return data and error messages.</Description>
     <Copyright>© 2024 Muhammet Furkan Ayhan. All rights reserved.</Copyright>
     <RepositoryUrl>https://github.com/mfurkanayhan/MFA.Result.git</RepositoryUrl>
@@ -18,7 +18,6 @@
     <PackageTags>.NET; error-handling; error-management; API; API-response; result-management</PackageTags>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
-	<Title>Result Pattern</Title>
   </PropertyGroup>
 
   <ItemGroup>
