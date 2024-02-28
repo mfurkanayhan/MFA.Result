@@ -20,7 +20,7 @@ Installation of `MFA.Result` can be done using several methods as described belo
 To install `MFA.Result` via the NuGet Package Manager Console in Visual Studio, use the following command:
 
 ```powershell 
-Install-Package MFA.Result -Version 8.0.0
+Install-Package MFA.Result -Version 8.0.1
 ```
 
 ### Using NuGet CLI
@@ -28,7 +28,7 @@ Install-Package MFA.Result -Version 8.0.0
 If you prefer using the command line, NuGet CLI can be used to install `MFA.Result`. First, ensure you have the NuGet CLI installed, then run the following command:
 
 ```powershell
-nuget install MFA.Result -Version 8.0.0
+nuget install MFA.Result -Version 8.0.1
 ```
 
 ### Using Visual Studio's NuGet Package Manager GUI
@@ -40,6 +40,7 @@ For those who prefer a graphical interface within Visual Studio:
 4.  Choose the version you wish to install if prompted.
 
 These methods provide flexibility in how you can add `MFA.Result` to your projects, depending on your preference for tooling and the environment.
+
 ## Usage
 Below are some examples of how to use the `MFA.Result` library in your projects.
 
@@ -56,7 +57,7 @@ public Result<string> GetUserName(int userId)
 public Result<string> GetUserName(int userId)
 {
     // Your logic here
-    return (HttpStatusCode.NotFound, "User not found");
+    return (404, "User not found"); // StatusCode is now an integer
 }
 ```
 ### Checking Operation Result
@@ -73,5 +74,8 @@ else
 ```
 ## Contributing
 Contributions are welcome! If you have suggestions or want to improve `MFA.Result`, please feel free to fork the repository, make changes, and submit a pull request.
+## Release Notes
+### Version 8.0.1
+-   Changed: StatusCode property type has been updated from HttpStatusCode to int.
 ## License
 `MFA.Result` is available under the MIT license. See the LICENSE file for more info.
