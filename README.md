@@ -44,7 +44,7 @@ These methods provide flexibility in how you can add `MFA.Result` to your projec
 ## Usage
 Below are some examples of how to use the `MFA.Result` library in your projects.
 
-### Successful Operation
+### Successful Operation (Implicit Conversion)
 ```csharp
 public Result<string> GetUserName(int userId)
 {
@@ -52,14 +52,31 @@ public Result<string> GetUserName(int userId)
     return "John Doe"; // Implicitly converts to a successful Result
 }
 ```
-### Operation With Error
+### Successful Operation (Using Succeed Method)
+```csharp
+public Result<string> GetUserNameWithSucceed(int userId)
+{
+    // Instead of relying on implicit conversion, directly use the Succeed method for clarity
+    return Result<string>.Succeed("John Doe");
+}
+```
+### Operation With Error (Implicit Conversion)
 ```csharp
 public Result<string> GetUserName(int userId)
 {
     // Your logic here
-    return (404, "User not found"); // StatusCode is now an integer
+    return (404, "User not found"); // StatusCode is now an integer, converts implicitly to a failure Result
 }
 ```
+### Operation With Error (Using Failure Method)
+```csharp
+public Result<string> GetUserNameWithFailure(int userId)
+{
+    // Explicitly use the Failure method for creating a failure Result with status code and error message
+    return Result<string>.Failure(404, new List<string> {"User not found"});
+}
+```
+
 ### Checking Operation Result
 ```csharp
 var result = GetUserName(1);
@@ -77,5 +94,8 @@ Contributions are welcome! If you have suggestions or want to improve `MFA.Resul
 ## Release Notes
 ### Version 8.0.1
 -   Changed: StatusCode property type has been updated from HttpStatusCode to int.
+## Release Notes for Version 8.0.2
+-   Added `Succeed` and `Failure` methods for clearer result creation.
+Upgrade recommended for improved functionality and code clarity.
 ## License
 `MFA.Result` is available under the MIT license. See the LICENSE file for more info.
