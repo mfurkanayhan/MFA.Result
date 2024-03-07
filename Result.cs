@@ -47,8 +47,23 @@ public sealed class Result<T>
         return new(data);
     }
 
-    public static Result<T> Failure(int statusCode, List<string> errorMessage)
+    public static Result<T> Failure(int statusCode, List<string> errorMessages)
     {
-        return new(statusCode, errorMessage);
+        return new(statusCode, errorMessages);
+    }
+
+    public static Result<T> Failure(int statusCode, string errorMessage)
+    {
+        return new(statusCode, errorMessage); 
+    }
+
+    public static Result<T> Failure(string errorMessage)
+    {
+        return new(500, errorMessage);
+    }
+
+    public static Result<T> Failure(List<string> errorMessages)
+    {
+        return new(500, errorMessages);
     }
 }

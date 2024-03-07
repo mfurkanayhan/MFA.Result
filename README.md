@@ -20,7 +20,7 @@ Installation of `MFA.Result` can be done using several methods as described belo
 To install `MFA.Result` via the NuGet Package Manager Console in Visual Studio, use the following command:
 
 ```powershell 
-Install-Package MFA.Result -Version 8.0.1
+Install-Package MFA.Result -Version 8.0.3
 ```
 
 ### Using NuGet CLI
@@ -28,7 +28,7 @@ Install-Package MFA.Result -Version 8.0.1
 If you prefer using the command line, NuGet CLI can be used to install `MFA.Result`. First, ensure you have the NuGet CLI installed, then run the following command:
 
 ```powershell
-nuget install MFA.Result -Version 8.0.1
+nuget install MFA.Result -Version 8.0.3
 ```
 
 ### Using Visual Studio's NuGet Package Manager GUI
@@ -68,15 +68,38 @@ public Result<string> GetUserName(int userId)
     return (404, "User not found"); // StatusCode is now an integer, converts implicitly to a failure Result
 }
 ```
-### Operation With Error (Using Failure Method)
+### Operation With Error (Using Failure Method with a Single Error Message)
 ```csharp
 public Result<string> GetUserNameWithFailure(int userId)
 {
-    // Explicitly use the Failure method for creating a failure Result with status code and error message
-    return Result<string>.Failure(404, new List<string> {"User not found"});
+    // Explicitly use the Failure method for creating a failure Result with a status code and a single error message
+    return Result<string>.Failure(404, "User not found");
 }
 ```
-
+### Operation With Error (Using Failure Method with Multiple Error Messages)
+```csharp
+public Result<string> GetMultipleErrors(int userId)
+{
+    // Use the Failure method with a status code and a list of error messages for multiple errors
+    return Result<string>.Failure(404, new List<string> {"User not found", "Data incomplete"});
+}
+```
+### Operation With Error (Using Failure Method with a Single Error Message and Default Status Code)
+```csharp
+public Result<string> GetDefaultStatusCodeError(int userId)
+{
+    // Use the Failure method with a single error message. This uses a default status code (e.g., 500)
+    return Result<string>.Failure("Internal server error");
+}
+```
+### Operation With Error (Using Failure Method with Multiple Error Messages and Default Status Code)
+```csharp
+public Result<string> GetDefaultStatusCodeMultipleErrors(int userId)
+{
+    // Use the Failure method with a list of error messages. This uses a default status code (e.g., 500)
+    return Result<string>.Failure(new List<string> {"Internal server error", "Unexpected error"});
+}
+```
 ### Checking Operation Result
 ```csharp
 var result = GetUserName(1);
@@ -94,8 +117,19 @@ Contributions are welcome! If you have suggestions or want to improve `MFA.Resul
 ## Release Notes
 ### Version 8.0.1
 -   Changed: StatusCode property type has been updated from HttpStatusCode to int.
-## Release Notes for Version 8.0.2
+### Version 8.0.2
 -   Added `Succeed` and `Failure` methods for clearer result creation.
-Upgrade recommended for improved functionality and code clarity.
+### Version 8.0.3
+- Expanded the `Failure` method into four distinct variations to provide more flexibility and clarity when handling error scenarios. This update allows for more precise error management and reporting by enabling the following:
+  - Creation of failure results with a single error message and a specific status code.
+  - Creation of failure results with multiple error messages and a specific status code.
+  - Creation of failure results with a single error message using a default status code (500).
+  - Creation of failure results with multiple error messages using a default status code (500).
+- These enhancements are designed to improve the usability and expressiveness of the `MFA.Result` library, making it easier for developers to communicate the outcome of operations with varied error conditions.
+- This update is recommended for all users to take full advantage of the improved error handling capabilities and to maintain consistency with the latest best practices in result management.
+
+Upgrade to version 8.0.3 is highly recommended to enhance the functionality and clarity of your error handling patterns.
+
+
 ## License
 `MFA.Result` is available under the MIT license. See the LICENSE file for more info.
