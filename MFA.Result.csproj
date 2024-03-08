@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>MFA.Result</PackageId>
-    <Version>8.0.3</Version>
+    <Version>8.0.4</Version>
 	<PackageReleaseNotes>
 	    Breaking Changes:
 	    - StatusCode property type has been changed from HttpStatusCode to int. Update your code to use integer comparison.

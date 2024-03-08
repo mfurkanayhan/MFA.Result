@@ -20,7 +20,7 @@ Installation of `MFA.Result` can be done using several methods as described belo
 To install `MFA.Result` via the NuGet Package Manager Console in Visual Studio, use the following command:
 
 ```powershell 
-Install-Package MFA.Result -Version 8.0.3
+Install-Package MFA.Result -Version 8.0.4
 ```
 
 ### Using NuGet CLI
@@ -28,7 +28,7 @@ Install-Package MFA.Result -Version 8.0.3
 If you prefer using the command line, NuGet CLI can be used to install `MFA.Result`. First, ensure you have the NuGet CLI installed, then run the following command:
 
 ```powershell
-nuget install MFA.Result -Version 8.0.3
+nuget install MFA.Result -Version 8.0.4
 ```
 
 ### Using Visual Studio's NuGet Package Manager GUI
@@ -126,10 +126,10 @@ Contributions are welcome! If you have suggestions or want to improve `MFA.Resul
   - Creation of failure results with a single error message using a default status code (500).
   - Creation of failure results with multiple error messages using a default status code (500).
 - These enhancements are designed to improve the usability and expressiveness of the `MFA.Result` library, making it easier for developers to communicate the outcome of operations with varied error conditions.
-- This update is recommended for all users to take full advantage of the improved error handling capabilities and to maintain consistency with the latest best practices in result management.
+### Version 8.0.4
+- Updated: Made `Succeed` method static for API consistency.
 
-Upgrade to version 8.0.3 is highly recommended to enhance the functionality and clarity of your error handling patterns.
-
+Upgrade to version 8.0.4 is highly recommended to enhance the functionality and clarity of your error handling patterns.
 
 ## License
 `MFA.Result` is available under the MIT license. See the LICENSE file for more info.
